@@ -1,0 +1,27 @@
+#game_stats {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    padding: 0.4em 2em;
+    border-radius: 1em;
+}
+
+#game_board {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    user-select: none;
+}
+
+#countdown {
+    position: absolute;
+    left: 50vw;
+    margin: 1em 0;
+    padding: 1.4em;
+    font-size: 2em;
+    background-color: var(--dark-bg);
+    transform: translateX(-50%) scale(1);
+    color: white;
+
+}

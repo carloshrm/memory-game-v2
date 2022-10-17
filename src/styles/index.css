@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+
+:root {
+  --dark-bg: #071e1d;
+  --dark-fg: #240947;
+  --accent: #42928e;
+  --light-bg: #ffffff;
+  --light-fg: #eceefc;
+}
+
+* {
+  margin: 0;
+  font-family: 'Mitr', sans-serif;
+}
+
+body {
+  background-color: var(--light-fg);
+}
+
+select,
+button {
+  padding: 0 0.4em;
+  margin: 0 0.6rem;
+  border: 1px solid var(--dark-bg);
+  border-radius: 1em;
+  background-color: white;
+}
