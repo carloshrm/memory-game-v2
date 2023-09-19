@@ -8,19 +8,19 @@ async function fetchFromAPI() {
     const localCache = localStorage.getItem("rawAnimeData");
     let anime: any = undefined;
     if (localCache === null) {
-        anime = callAPI();
+        anime = await callAPI();
     } else {
         const lastFetch = localStorage.getItem("rawAnimeData_age");
         if (lastFetch !== null) {
             const fourMonths = 7786800000;
             const age = new Date().valueOf() - new Date(lastFetch).valueOf();
             if (age >= fourMonths) {
-                anime = callAPI();
+                anime = await callAPI();
             } else {
                 anime = JSON.parse(localCache);
             }
         } else {
-            anime = callAPI();
+            anime = await callAPI();
             localStorage.setItem("rawAnimeData_age", new Date().valueOf().toString());
         }
     }
@@ -31,7 +31,6 @@ async function callAPI() {
     const apiCall = await fetch(`https://api.jikan.moe/v4/seasons/now`);
     const animeData = await apiCall.json();
     localStorage.setItem("rawAnimeData", JSON.stringify(animeData.data));
-    // console.log(animeData.data);
     return animeData.data;
 }
 
